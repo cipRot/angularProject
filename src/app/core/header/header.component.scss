@@ -1,0 +1,44 @@
+@import '~src/assets/sass/_variables';
+ 
+#header{
+    display: inline-block;
+    width: 100%;
+
+    &-logo{
+        padding: 0 10px
+    }
+    .mat-toolbar-row,
+    .mat-toolbar-single-row{
+        background: $main-color; 
+        height:50px;
+    }
+    
+    .width-auto{
+        width: auto;
+        color: $white-color;
+    }
+
+    &-mobile{
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
+    }
+
+    &-desktop{
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+

@@ -1,0 +1,93 @@
+<p>This demo screen calls a JSON-server API we have hosted on the Internet with
+proper CORS support. It illustrates how to use the search select with
+a server-side API.</p>
+
+<form>
+  <div>Value: {{{ value: search.value } | json }}
+    Touched: {{ search.touched | json }}
+    Errors: {{ search.errors | json }}</div>
+
+  <div>
+    <input #manual type="text" placeholder="Change Our Value">
+    <button (click)="search.setValue(manual.value)">Set</button>
+  </div>
+
+  <div class="set-apart">
+    <search-select
+      placeholder="Company" 
+      [formControl]="search"
+      [dataSource]="dataSource"></search-select>
+  </div>
+
+  <div style="height: 600px"></div>
+</form>
+
+
+
+import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
+import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+// import { DataSource, Employee, OptionEntry, } from "../../../shared/interfaces/interfaces";
+
+// const apiURL = 'https://api.angularbootcamp.com/employees';
+
+@Component({
+  selector: 'app-clienti-search',
+  templateUrl: './clienti-search.component.html',
+  styleUrls: ['./clienti-search.component.scss']
+})
+export class ClientiSearchComponent implements OnInit {
+  searchOption: object[] = [
+    {name:"Cod produs", value: "cod_produs"},
+    {name:"Cod client", value: "nr_apel"},
+    {name:"Cod client", value: "cod_client"},
+    {name:"Cont facturare", value: "codabonat"},
+    {name:"CNP", value: "cnp"},
+    {name:"CUI", value: "cui"},
+    {name:"SID", value: "sid"} 
+  ]; 
+
+  ngOnInit() {
+  }
+  search = new FormControl(null, [Validators.required]);
+  dataSource: DataSource
+
+  constructor(http: HttpClient) {  
+    this.dataSource = {
+      displayValue(value: any): Observable<OptionEntry | null> {
+        console.log('finding display value for', value);
+        if (typeof value === 'string') {
+          value = parseInt(value, 10);
+        }
+        if (typeof value !== 'number') {
+          return of(null);
+        }
+
+        return http.get<Employee>(apiURL + '/' + value).pipe(
+          map(e => ({
+            value: e.id,
+            display: `${e.first_name} ${e.last_name} (${e.email})`,
+            details: {}
+          }))
+        );
+      },
+      search(term: string): Observable<OptionEntry[]> {
+        console.log('searching for', term);
+        return http.get<Employee[]>(apiURL, {
+          params: {
+            q: term || '',
+            _sort: 'last_name,first_name'
+          }
+        }).pipe(
+          map(list => list.map(e => ({
+            value: e.id,
+            display: `${e.first_name} ${e.last_name} (${e.email})`,
+            details: {}
+          }))));
+      }
+    };
+  }
+}

@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@mixin col-c-mixin {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    @media screen and (max-width: 767px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}

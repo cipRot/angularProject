@@ -1,0 +1,35 @@
+.check-box {
+    position: relative;
+}
+
+.check-box  .fake_checkbox{
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d2d6de;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.check-box input:checked + .fake_checkbox{
+    border-color: $main-color;
+}
+
+.check-box input + .fake_checkbox .check_sign{
+    display: none
+}
+
+.check-box input:checked + .fake_checkbox .check_sign{ 
+    width: 5px;
+    height: 5px; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

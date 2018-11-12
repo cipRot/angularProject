@@ -1,0 +1,269 @@
+@import '~src/assets/sass/_variables';
+
+#logo {
+	position: relative;
+	width: 391px;
+	height: 78px; 
+	top: -20px;
+	left: -5px;
+}
+
+#logininfo {
+	color: #003366;
+	color:#808080;
+	margin-top: 100px;
+}
+
+#logininfo a {
+	color: #0000ae;
+	&:hover {
+		color: #c400c4;
+	}
+} 
+
+.always-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-height: 100vh;
+    background: #F2F2F2;
+    color: #585c5e;
+}
+ 
+#fields {
+	position: relative;
+	z-index: 2;
+	left: 0px;
+	top: 0px;
+}  
+
+#lostpassword {
+	position: absolute;
+	width: 88px;
+	height: 18px;
+	z-index: 3;
+	left: 340px;
+	top: 196px;
+}
+
+#copyright {
+	margin: 0!important;
+}  
+
+.spanMagenta {
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	color: $main-color;
+}
+.fields {
+	color: #777777;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	margin: 2px 2px 2px 2px;
+	background-color: #fff;
+	border: 1px solid #c0c0c0;
+	border-color: #c0c0c0 #727272 #727272 #c0c0c0;	
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 170px;
+	height: 24px;
+}  /* Form field style */
+
+.fields{
+		&:focus,
+		.sffocus {
+		color: #000;
+		background-color: #d7edfa;
+		border: 1px solid #c0c0c0;
+		border-color: #c0c0c0 #4b4b4b #4b4b4b #c0c0c0;	
+	}
+	
+}
+
+.button {
+	color: #000;
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bolder;
+	color: #000040;
+	margin: 0 0 0 0;
+	padding: 1px 4px 2px 4px; 
+	border: 1px solid #fff;
+	border-color: #ccc #888888 #888888 #ccc;
+	width: 100px;
+	height: 24px;
+}
+ 
+
+.copyright {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #F00;
+    font-style: normal;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: -4px; 
+    margin: 15px 0 -10px;
+} 
+
+.welcome {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #06F;
+	font-size: 18px;
+	letter-spacing: -1px;
+}
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+#mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 9000;
+	background-color: #000;
+	display: none;
+}
+
+#boxes .window {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 440px;
+	height: 200px;
+	display: none;
+	z-index: 9999;
+	padding: 20px;
+}
+
+#boxes #dialog2 {
+	width: 326px;
+	height: 229px;
+	padding: 50px 0 20px 25px;
+	background-color: transparent; 
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+ 
+  
+.headplc{
+    width: 100%;
+    overflow: hidden;
+    padding-top: 1px;
+    padding-left: 60px;
+    position: relative;
+    left: -3px;
+}
+
+.heads{
+	width:100%;
+	display:block;
+	padding:4px 0 4px 0;
+	margin:4px 0 2px 0;
+}
+.headprf{
+	color:#333377;
+	position: absolute;
+	left: 15px;
+}
+.headlnk{
+	font-family:sans-serif;
+	font-size:10px;
+	text-decoration:none;
+	color:$main-color;
+	font-weight:bold;
+}
+
+
+#login-form-wrp{
+	border-bottom: 4px solid $main-color;
+    background: #fff;
+    position: relative; 
+    box-shadow: 10px 10px 2px #dedede;
+    overflow: hidden;
+    width: 340px;
+    min-height: 450px;
+}
+
+#form-title{ 
+	margin: 22px 0 15px;
+    text-align: center; 
+    font-size: 21px;
+    position: relative;
+    padding-left: 84px;
+	color: $main-color;
+	.fa{
+		position: absolute;
+		top: -9px;
+		left: 31px;
+	}
+}
+
+#login-form { 
+    background: #fff;
+    padding: 0px 30px 10px;
+    label{
+	    display: inline-block;
+	    width: 100%;
+	    font-size: 13px;
+	    text-transform: uppercase;
+	    margin-bottom: 7px;
+	    color: $main-color;
+	    font-weight: bold;
+	}
+	>div{
+		margin-bottom: 0px;
+		position: relative;
+		text-align: left;
+	} 
+
+	#answer{
+		width: 150px;
+	}
+
+	#btnLogin{
+		width: 100%;
+		border: 0;
+		padding: 7px 0px;
+		color: #fff;
+		background: $main-color;
+		border-radius: 5px;
+		text-transform: uppercase; 
+		outline: 0;
+		cursor: pointer;
+		margin: 20px auto 0;
+		display: block;
+	} 
+} 
+
+.login-header{
+    padding: 40px 30px 20px;
+    text-align: left;
+    background: $main-color;
+	display: flex;
+	&-logo{
+		flex:0 0 30%;
+	}
+	&-text{
+		flex: 0 0 100%;
+		position: relative;
+		top: -7px;
+		h3{
+			text-align: center;
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 24px;
+			margin-bottom: 6px;
+			margin: 0px;
+			font-family: arial;
+			font-weight: bold;
+		}
+	 
+	} 
+     
+} 

@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */ 
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './_variables';
+@import './_mixins';
+@import './_layout';
+
+@import './components/_checkbox.scss';
+@import './_magenta-theme.scss';
+
+
+html, body { height: 100%; }
+body { 
+	margin: 0; font-family: 'Roboto', sans-serif;
+	background: #fafafa
+}
+.mat-form-field {
+	width: 100%;
+}
+.container {
+    max-width: 1250px;
+}
+button:focus{
+	outline: 0;
+}

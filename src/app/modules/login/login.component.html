@@ -1,0 +1,34 @@
+<div class="always-center">
+	<div class="box">
+	    <div id="login-form-wrp">
+			<div class="login-header">  
+				<div class="login-header-text"> 
+					<h3>My App</h3> 
+				</div>
+			</div>
+			<h3 id="form-title"> 
+				<i class="fa fa-key fa-2x" aria-hidden="true"></i>  
+				LOGIN FORM
+			</h3>
+			<form id="login-form" #loginForm="ngForm" (ngSubmit)="authentication(username, password, answer, mangenta)">
+				<div class="form-group">
+				    <mat-form-field class="example-full-width" placeholder="Username...">
+				    	<mat-label>Username</mat-label>
+					    <input matInput placeholder="Username" name="username" [(ngModel)]="username"/>
+					</mat-form-field>
+				</div> 
+
+				<div class="form-group">
+					<mat-form-field appearance="legacy">
+				    	<mat-label>Parola</mat-label>
+				    	<input matInput placeholder="Parola" type="password" name="password" [(ngModel)]="password">  
+				  	</mat-form-field> 
+				</div>  
+  
+				<mat-checkbox name="magenta" [(ngModel)]="mangenta">app!</mat-checkbox>
+
+				<button type="submit" class="btn btn-primary" id="btnLogin">Submit</button>   
+			</form>
+		</div>
+	</div>
+</div>
