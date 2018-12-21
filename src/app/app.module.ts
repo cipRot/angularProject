@@ -58,7 +58,7 @@ const MaterialImports = [
 ];
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", redirectTo:  "login", pathMatch: 'full' },
   { path: "login", component: LoginComponent }, 
 ];
 
